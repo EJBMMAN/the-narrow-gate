@@ -13,8 +13,9 @@ from narrow_gate.src.utils.scrape import  *
 from narrow_gate.src.utils.finder import  *
 import streamlit as st
 
-load_dotenv()
-GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
+# load_dotenv()
+ 
+GOOGLE_MAPS_API_KEY = st.secrets["GOOGLE_MAPS_API_KEY"]
 gmaps = googlemaps.Client(key=GOOGLE_MAPS_API_KEY)
 
 def calculate_distance(x, geocode_in):
