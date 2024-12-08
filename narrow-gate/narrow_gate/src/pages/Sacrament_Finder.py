@@ -7,6 +7,8 @@ import requests
 # from bs4 import BeautifulSoup
 import pandas as pd
 import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+
 import plotly.express as px
 import plotly.io as pio
 pio.templates.default = 'plotly' 
@@ -26,8 +28,13 @@ st.set_page_config(page_title="Mass Finder Demo", page_icon="🌍")
 st.markdown("# Mass Finder Demo")
 # st.sidebar.header("Mass Finder Demo")
 
-churches = pd.read_csv('churches.csv')
-masses = pd.read_csv('masses.csv')
+conn = st.connection("gsheets", type=GSheetsConnection)
+churches = conn.read(
+    worksheet="churches",
+)
+masses = conn.read(
+    worksheet="masses",
+)
 
 # sample_address = 'Skyway Twin Towers Condominium Capt. Javier st. Brgy Oranbo Pasig city'
 # search_range = 10
