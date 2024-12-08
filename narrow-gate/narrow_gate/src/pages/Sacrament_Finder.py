@@ -1,5 +1,6 @@
 # import libraries
 import os
+print(os.getcwd())
 # from dotenv import load_dotenv
 import datetime
 import requests
