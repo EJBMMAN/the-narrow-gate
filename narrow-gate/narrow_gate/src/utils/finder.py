@@ -9,8 +9,8 @@ from geopy.distance import geodesic
 import googlemaps
 import time
 from pathlib import Path
-from narrow_gate.src.utils.scrape import  *
-from narrow_gate.src.utils.finder import  *
+from src.utils.scrape import  *
+from src.utils.finder import  *
 import streamlit as st
 
 # load_dotenv()
