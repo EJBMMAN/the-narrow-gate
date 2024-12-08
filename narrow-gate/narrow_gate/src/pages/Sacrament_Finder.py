@@ -32,11 +32,9 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 churches = conn.read(
     spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing',
-    sheet="churches",
 )
 masses = conn.read(
-    spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing',
-    sheet="masses",
+    spreadsheet='https://docs.google.com/spreadsheets/d/19BPV1s8t7XVbPzpDmP__cJhjAIVUN0ldxFtJFk8PurM/edit?usp=sharing',
 )
 
 # sample_address = 'Skyway Twin Towers Condominium Capt. Javier st. Brgy Oranbo Pasig city'
