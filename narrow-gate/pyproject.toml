@@ -17,6 +17,7 @@ google = "^3.0.0"
 python-dotenv = "^1.0.1"
 pathlib = "^1.0.1"
 streamlit = "^1.40.2"
+st-gsheets-connection = "^0.1.0"
 
 
 [build-system]
