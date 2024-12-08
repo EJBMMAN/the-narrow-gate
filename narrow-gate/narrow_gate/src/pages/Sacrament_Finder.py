@@ -26,7 +26,7 @@ st.set_page_config(page_title="Mass Finder Demo", page_icon="🌍")
 st.markdown("# Mass Finder Demo")
 # st.sidebar.header("Mass Finder Demo")
 
-churches = pd.read_csv('../.../data/churches.csv')
+churches = pd.read_csv('../../data/churches.csv')
 masses = pd.read_csv('../../data/masses.csv')
 
 # sample_address = 'Skyway Twin Towers Condominium Capt. Javier st. Brgy Oranbo Pasig city'
