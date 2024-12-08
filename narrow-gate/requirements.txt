@@ -129,3 +129,4 @@ webcolors==24.11.1 ; python_version >= "3.12" and python_version < "4.0"
 webencodings==0.5.1 ; python_version >= "3.12" and python_version < "4.0"
 websocket-client==1.8.0 ; python_version >= "3.12" and python_version < "4.0"
 widgetsnbextension==4.0.13 ; python_version >= "3.12" and python_version < "4.0"
+st-gsheets-connection
