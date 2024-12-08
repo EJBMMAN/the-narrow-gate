@@ -65,6 +65,6 @@ if st.button('Search'):
                         name='my location'
                         )
         # st.plotly_chart(fig)
-        st.table(mass_results[['schedule','church_name','church_address','Travel Time(Mins)','Arrival Time']])
+        st.table(mass_results[['schedule','church_name','church_address','Travel Time(Mins)']])
     except Exception as e:
         st.markdown(e)
