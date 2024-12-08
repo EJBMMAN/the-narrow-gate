@@ -31,11 +31,11 @@ st.markdown("# Mass Finder Demo")
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 churches = conn.read(
-    spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing'
+    spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing',
     worksheet="churches",
 )
 masses = conn.read(
-    spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing'
+    spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing',
     worksheet="masses",
 )
 
