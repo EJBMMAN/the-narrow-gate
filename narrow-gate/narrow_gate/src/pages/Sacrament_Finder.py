@@ -28,46 +28,46 @@ st.set_page_config(page_title="Mass Finder Demo", page_icon="🌍")
 st.markdown("# Mass Finder Demo")
 # st.sidebar.header("Mass Finder Demo")
 
-conn = st.connection("https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing", type=GSheetsConnection)
-# df = conn.read()
-# Print results.
-# st.dataframe(df)
+conn = st.connection("gsheets", type=GSheetsConnection)
+df = conn.read(spreadsheet='https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing')
+st.dataframe(df.head())
 
-churches = conn.read(
-    worksheet="churches",
-)
-masses = conn.read(
-    worksheet="masses",
-)
 
-# sample_address = 'Skyway Twin Towers Condominium Capt. Javier st. Brgy Oranbo Pasig city'
-# search_range = 10
-# target_sched = '6:00 PM'
-current_datetime = datetime.datetime.now()
-sample_address = st.text_input("Your current location")
-search_range = st.number_input("Search radius(km)", value=5, step=1)
-target_sched = st.time_input("Target Schedule", step=1800).strftime('%I:%M %p')
+# churches = conn.read(
+#     worksheet="churches",
+# )
+# masses = conn.read(
+#     worksheet="masses",
+# )
 
-# st.table(churches.head(3))
-# st.table(masses.head(3))
-# st.markdown(target_sched)
+# # sample_address = 'Skyway Twin Towers Condominium Capt. Javier st. Brgy Oranbo Pasig city'
+# # search_range = 10
+# # target_sched = '6:00 PM'
+# current_datetime = datetime.datetime.now()
+# sample_address = st.text_input("Your current location")
+# search_range = st.number_input("Search radius(km)", value=5, step=1)
+# target_sched = st.time_input("Target Schedule", step=1800).strftime('%I:%M %p')
 
-if st.button('Search'):
-    try:
-        church_results, mass_results = find_mass(churches, masses, sample_address, search_range, target_sched, current_datetime)
+# # st.table(churches.head(3))
+# # st.table(masses.head(3))
+# # st.markdown(target_sched)
 
-        fig = px.scatter_map(church_results[church_results.church_name.isin(mass_results.church_name)],
-                            lat="lat",
-                            lon="long",
-                            hover_name="church_name", # display church name on hover
-                            text="church_name"
-                            )
-        sample_geocode = gmaps.geocode(sample_address)
-        fig.add_scattermap(lon=[sample_geocode[0]['geometry']['location']['lng']],
-                        lat=[sample_geocode[0]['geometry']['location']['lat']],
-                        name='my location'
-                        )
-        st.plotly_chart(fig)
-        st.table(mass_results[['schedule','church_name','church_address','Travel Time(Mins)','Arrival Time']])
-    except Exception as e:
-        st.markdown(e)
+# if st.button('Search'):
+#     try:
+#         church_results, mass_results = find_mass(churches, masses, sample_address, search_range, target_sched, current_datetime)
+
+#         fig = px.scatter_map(church_results[church_results.church_name.isin(mass_results.church_name)],
+#                             lat="lat",
+#                             lon="long",
+#                             hover_name="church_name", # display church name on hover
+#                             text="church_name"
+#                             )
+#         sample_geocode = gmaps.geocode(sample_address)
+#         fig.add_scattermap(lon=[sample_geocode[0]['geometry']['location']['lng']],
+#                         lat=[sample_geocode[0]['geometry']['location']['lat']],
+#                         name='my location'
+#                         )
+#         st.plotly_chart(fig)
+#         st.table(mass_results[['schedule','church_name','church_address','Travel Time(Mins)','Arrival Time']])
+#     except Exception as e:
+#         st.markdown(e)
