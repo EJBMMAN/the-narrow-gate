@@ -14,8 +14,8 @@ from geopy.distance import geodesic
 import googlemaps
 import time
 from pathlib import Path
-from src.utils.scrape import  *
-from src.utils.finder import  *
+from utils.scrape import  *
+from utils.finder import  *
 
 
 # load_dotenv()
