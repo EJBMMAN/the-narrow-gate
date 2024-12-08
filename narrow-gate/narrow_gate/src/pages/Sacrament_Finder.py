@@ -1,6 +1,6 @@
 # import libraries
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import datetime
 import requests
 from bs4 import BeautifulSoup
@@ -17,8 +17,8 @@ from narrow_gate.src.utils.scrape import  *
 from narrow_gate.src.utils.finder import  *
 
 
-load_dotenv()
-GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
+# load_dotenv()
+GOOGLE_MAPS_API_KEY = st.secrets["GOOGLE_MAPS_API_KEY"]
 gmaps = googlemaps.Client(key=GOOGLE_MAPS_API_KEY)
 
 st.set_page_config(page_title="Mass Finder Demo", page_icon="🌍")
