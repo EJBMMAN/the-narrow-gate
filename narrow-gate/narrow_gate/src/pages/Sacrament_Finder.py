@@ -28,12 +28,10 @@ st.set_page_config(page_title="Mass Finder Demo", page_icon="🌍")
 st.markdown("# Mass Finder Demo")
 # st.sidebar.header("Mass Finder Demo")
 
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("https://docs.google.com/spreadsheets/d/1onhJrQ7bp2NWQX3DABR-YrzSQLiXrpF1XmZjesE01Hg/edit?usp=sharing", type=GSheetsConnection)
 df = conn.read()
-
 # Print results.
-for row in df.itertuples():
-    st.write(f"{row.name} has a :{row.pet}:")
+st.dataframe(df)
 
 
 # churches = conn.read(
