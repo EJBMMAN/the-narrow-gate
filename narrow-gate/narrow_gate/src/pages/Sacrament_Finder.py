@@ -64,7 +64,7 @@ if st.button('Search'):
                         lat=[sample_geocode[0]['geometry']['location']['lat']],
                         name='my location'
                         )
-        st.plotly_chart(fig)
+        # st.plotly_chart(fig)
         st.table(mass_results[['schedule','church_name','church_address','Travel Time(Mins)','Arrival Time']])
     except Exception as e:
         st.markdown(e)
