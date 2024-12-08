@@ -3,7 +3,7 @@ import os
 # from dotenv import load_dotenv
 import datetime
 import requests
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import pandas as pd
 import streamlit as st
 import plotly.express as px
