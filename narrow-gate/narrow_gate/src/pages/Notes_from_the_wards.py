@@ -7,7 +7,7 @@ st.set_page_config(
 st.markdown("# Notes from the wards")
 # st.sidebar.header("Notes from the Command-line")
 
-st.write("# Advent and Medical School - Second Sunday of Advent Dec 8, 2024")
+st.write("# On the narrow way  - Second Sunday of Advent Dec 8, 2024")
 
 st.markdown(
     """
